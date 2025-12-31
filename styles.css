@@ -90,6 +90,33 @@ p {
   margin-bottom: 1rem;
 }
 
+.letter {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 30px rgba(13, 6, 23, 0.6);
+}
+
+.letter p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.letter p + p {
+  margin-top: 1rem;
+}
+
+.letter .salute {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 1.35rem;
+  color: var(--text);
+  letter-spacing: 0.06em;
+}
+
 .highlights {
   list-style: none;
   padding: 0;

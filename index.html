@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>С Новым годом!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+    <main class="hero" role="main">
+      <section class="greeting">
+        <p class="eyebrow">С Новым 2026 годом, любовь</p>
+        <h1>Хочу встретить китов рядом с тобой</h1>
+        <p class="lead">
+          Пока вспоминаю наш прошлый декабрь, мечтаю о том, как мы окажемся на самом краю
+          страны, вдохнём солёный воздух Териберки и будем смеяться, когда над нами
+          всплывёт первый кит. Этот подарок — моё обещание провести с тобой ту самую зиму.
+        </p>
+        <ul class="highlights" aria-label="Что входит в наш план">
+          <li>Я встречу тебя в Мурманске и мы поедем вместе</li>
+          <li>Укрываю тебя пледом на берегу, пока ждём китов</li>
+          <li>Сделаю сотню снимков твоей улыбки и Полярной ночи</li>
+        </ul>
+        <button class="cta" type="button" data-open-modal>
+          Открыть моё поздравление
+          <span aria-hidden="true">🎁</span>
+        </button>
+      </section>
+
+      <section class="voyage-visual" aria-hidden="true">
+        <img src="kit.webp" alt="Иллюстрация кита" loading="lazy" />
+        <img src="hvost.webp" alt="Хвост кита" loading="lazy" />
+        <img src="ship.webp" alt="Силуэт корабля" loading="lazy" />
+      </section>
+
+      <section class="gift" aria-labelledby="gift-title">
+        <div class="coupon-preview">
+          <div class="glow"></div>
+          <p class="eyebrow small">Наш секретный билет</p>
+          <h2 id="gift-title">Экскурсия «Киты Териберки для нас двоих»</h2>
+          <ul class="details" aria-label="Условия сертификата">
+            <li>Можно активировать в любой зимний уикенд 2026</li>
+            <li>Я беру на себя дорогу, жильё, обеды и горячий чай</li>
+            <li>В PDF письмо, где расписал маршрут и свои обещания</li>
+          </ul>
+        </div>
+        <div class="gift-actions">
+          <a class="btn primary" href="coupon_example.pdf" download>
+            Скачать сертификат
+          </a>
+          <button class="btn ghost" type="button" data-open-modal>
+            Посмотреть онлайн
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="certificateModal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <div class="modal__content">
+        <button class="modal__close" type="button" data-close-modal aria-label="Закрыть">
+          ×
+        </button>
+        <p id="modal-title">Моё новое‑годнее обещание</p>
+        <p class="modal-lead">
+          Внутри письмо для тебя: я рассказываю, как заберу тебя в Мурманске, как будем искать
+          хвосты китов и греться у огня. Этот PDF — не просто документ, а наш план сделать зиму
+          громче моря.
+        </p>
+        <object data="coupon_example.pdf" type="application/pdf" title="Подарочный сертификат">
+          <p>
+            Ваш браузер не поддерживает предпросмотр PDF. Вы можете
+            <a href="coupon_example.pdf" target="_blank" rel="noopener">открыть файл в новой вкладке</a>
+            или скачать его.
+          </p>
+        </object>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

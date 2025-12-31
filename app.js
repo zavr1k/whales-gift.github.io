@@ -16,6 +16,7 @@ function lockBodyScroll(lock) {
 }
 
 function openModal() {
+  if (!modal) return;
   modal.classList.add("visible");
   modal.setAttribute("aria-hidden", "false");
   modal.tabIndex = -1;
@@ -24,23 +25,31 @@ function openModal() {
 }
 
 function closeModal() {
+  if (!modal) return;
   modal.classList.remove("visible");
   modal.setAttribute("aria-hidden", "true");
   lockBodyScroll(false);
 }
 
-openButtons.forEach((btn) => btn.addEventListener("click", openModal));
-closeButton.addEventListener("click", closeModal);
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeModal();
+if (modal) {
+  Array.from(openButtons).forEach((btn) => btn.addEventListener("click", openModal));
+
+  if (closeButton) {
+    closeButton.addEventListener("click", closeModal);
   }
-});
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && modal.classList.contains("visible")) {
-    closeModal();
-  }
-});
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("visible")) {
+      closeModal();
+    }
+  });
+}
 
 class Firework {
   constructor() {

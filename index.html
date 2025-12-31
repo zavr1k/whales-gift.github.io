@@ -35,39 +35,101 @@
         </div>
       </section>
 
-      <section class="voyage-visual" aria-hidden="true">
-        <img src="kit.webp" alt="Иллюстрация кита" loading="lazy" />
-        <img src="hvost.webp" alt="Хвост кита" loading="lazy" />
-        <img src="ship.webp" alt="Силуэт корабля" loading="lazy" />
-        <img src="ships.webp" alt="Катера в Баренцевом море" loading="lazy" />
-      </section>
-
-      <section class="gift" aria-labelledby="gift-title">
-        <div class="coupon-preview">
-          <div class="glow"></div>
-          <p class="eyebrow small">Твой секретный билет</p>
-          <h2 id="gift-title">Экскурсия «Суровый Север: киты, Териберка и кладбище кораблей»</h2>
-          <ul class="details" aria-label="Условия сертификата">
-            <li>Можно активировать в любой зимний уикенд 2026</li>
-            <li>
-              Сертификат активируй по ссылке
-              <a href="https://www.sputnik8.com/ru/coupons/22659" target="_blank" rel="noopener noreferrer">
-                sputnik8.com/ru/coupons/22659
+      <section class="excursions" aria-labelledby="excursions-title">
+        <p class="eyebrow small">Выбирай приключение</p>
+        <h2 id="excursions-title">Три маршрута для встречи с севером</h2>
+        <p class="lead">
+          Каждый маршрут — это отдельная история про штормы, киты и бесконечный горизонт. Выбирай, куда
+          полетит твой объектив в 2026 году.
+        </p>
+        <div class="excursion-grid" role="list">
+          <article class="excursion-card" role="listitem">
+            <div class="excursion-card__media">
+              <img src="kit.webp" alt="Кит в волнах Баренцева моря" loading="lazy" />
+            </div>
+            <div class="excursion-card__body">
+              <h3>Териберка: арктическая сказка на краю земли</h3>
+              <p>
+                Смотри на северное сияние, выходи к океану и дыши морозом — Териберка встречает новый год
+                настоящей сказкой.
+              </p>
+              <a
+                class="btn primary"
+                href="https://www.sputnik8.com/ru/murmansk/activities/61033-teriberka-arkticheskaya-skazka-na-krayu-zemli?event_date=2026-01-01&option_id=38707&event_id=172695126&ticket_id_109246=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Подробнее
               </a>
-          </ul>
+            </div>
+          </article>
+
+          <article class="excursion-card" role="listitem">
+            <div class="excursion-card__media">
+              <img src="hvost.webp" alt="Хвост кита над водой" loading="lazy" />
+            </div>
+            <div class="excursion-card__body">
+              <h3>Суровый север: киты, Териберка и кладбище кораблей</h3>
+              <p>
+                Плыви мимо остовов кораблей, жди появления хвоста кита и снимай каждый новый кадр настоящей
+                экспедиционной честности.
+              </p>
+              <a
+                class="btn primary"
+                href="https://www.sputnik8.com/ru/murmansk/activities/61285-surovyy-sever-kity-teriberka-i-kladbische-korabley?event_date=2026-01-02&option_id=61285&event_id=169785045&ticket_id_131749=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Подробнее
+              </a>
+            </div>
+          </article>
+
+          <article class="excursion-card" role="listitem">
+            <div class="excursion-card__media">
+              <img src="ships.webp" alt="Катера у кромки льда" loading="lazy" />
+            </div>
+            <div class="excursion-card__body">
+              <h3>Териберка с выходом в Баренцево море</h3>
+              <p>
+                Выходи в море за штормами, засними лёд на берегу драконов и отыщи свой главный кадр среди
+                шхун и скал.
+              </p>
+              <a
+                class="btn primary"
+                href="https://www.sputnik8.com/ru/murmansk/activities/45342-teriberka-s-vyhodom-v-barentsevo-more?event_date=2026-01-03&option_id=45342&event_id=169772667&ticket_id_200890=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Подробнее
+              </a>
+            </div>
+          </article>
         </div>
-        <div class="gift-actions">
-          <a
-            class="btn primary"
-            href="https://www.sputnik8.com/ru/coupons/22659"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Получить сертификат
-          </a>
+        <div class="final-cta">
+          <button class="cta" type="button" data-open-modal>Когда прилетит сертификат?</button>
         </div>
       </section>
     </main>
+
+    <div
+      class="modal"
+      id="certificateModal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="certificate-title"
+    >
+      <div class="modal__content">
+        <button class="modal__close" type="button" aria-label="Закрыть" data-close-modal>&times;</button>
+        <p class="eyebrow small">Важно</p>
+        <h3 id="certificate-title">Сертификат в пути</h3>
+        <p class="modal-lead">
+          Сертификат прилетит на почту 1 января. Проверь папку «Входящие» и, на всякий случай, «Спам»,
+          чтобы не пропустить свою арктическую посылку.
+        </p>
+      </div>
+    </div>
 
     <script type="module" src="app.js"></script>
   </body>

@@ -22,17 +22,18 @@ body {
   background: radial-gradient(circle at top, var(--bg-end), var(--bg-start) 60%);
   color: var(--text);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 1.25rem 3rem;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1.5rem 1rem 2.75rem;
   overflow-x: hidden;
 }
 
 h1 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
   font-family: "Playfair Display", "Georgia", serif;
-  font-size: clamp(2.25rem, 8vw, 3.75rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(1.9rem, 7vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -53,12 +54,13 @@ p {
 .hero {
   position: relative;
   z-index: 1;
-  width: min(580px, 100%);
+  width: 100%;
+  max-width: 960px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  border-radius: 32px;
+  gap: 1.75rem;
+  padding: 1.75rem;
+  border-radius: 26px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   box-shadow: 0 20px 80px rgba(5, 0, 20, 0.45);
@@ -71,29 +73,29 @@ p {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.35em;
-  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .eyebrow.small {
-  letter-spacing: 0.3em;
-  font-size: 0.7rem;
-  margin-bottom: 0.6rem;
+  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  margin-bottom: 0.5rem;
 }
 
 .lead {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .letter {
-  margin-top: 1.25rem;
-  padding: 1.5rem;
-  border-radius: 26px;
+  margin-top: 1.1rem;
+  padding: 1.25rem;
+  border-radius: 22px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 30px rgba(13, 6, 23, 0.6);
@@ -161,101 +163,98 @@ p {
   outline-offset: 3px;
 }
 
-.voyage-visual {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.75rem;
-  width: 100%;
-  border-radius: 26px;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-}
-
-.voyage-visual img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 18px;
-  filter: saturate(1.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-}
-
-.gift {
+.excursions {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.coupon-preview {
-  position: relative;
-  border-radius: 24px;
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.excursion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.excursion-card {
+  border-radius: 22px;
   overflow: hidden;
-}
-
-.coupon-preview h2 {
-  margin: 0;
-  font-size: 1.6rem;
-}
-
-.coupon-preview p:first-child {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.details,
-.caption {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.details {
-  list-style: none;
-  padding: 0;
-  margin: 0.75rem 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  min-height: 100%;
 }
 
-.details li {
+.excursion-card__media img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.15);
+}
+
+.excursion-card__body {
   display: flex;
-  align-items: center;
-  color: var(--text-muted);
-  gap: 0.35rem;
-}
-
-.details li::before {
-  content: "•";
-  margin-right: 0.4rem;
-  color: var(--accent);
-}
-
-.details a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-.glow {
-  position: absolute;
-  inset: -40%;
-  background: radial-gradient(circle, rgba(255, 191, 77, 0.4), transparent 60%);
-  filter: blur(30px);
-  z-index: -1;
-}
-
-.gift-actions {
-  display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.75rem;
+  padding: 1.1rem 1.25rem 1.35rem;
+}
+
+.excursion-card__body h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+.excursion-card__body p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.excursion-card .btn {
+  align-self: stretch;
+  width: 100%;
+  margin-top: auto;
+}
+
+.final-cta {
+  margin-top: 0.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.final-cta .cta {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .excursion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .excursion-card .btn {
+    width: auto;
+    min-width: 10rem;
+  }
+
+  .final-cta .cta {
+    width: auto;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 980px) {
+  .excursion-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .btn {
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 0.85rem 1.2rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -263,7 +262,7 @@ p {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  flex: 1;
+  width: 100%;
 }
 
 .btn.primary {
@@ -299,9 +298,10 @@ p {
 
 .modal__content {
   position: relative;
-  width: min(600px, 100%);
+  width: 100%;
+  max-width: 420px;
   max-height: 90vh;
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 20px;
   background: #0d0617;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -344,7 +344,7 @@ p {
   border: none;
   background: transparent;
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
 
@@ -352,26 +352,27 @@ body.freeze {
   overflow: hidden;
 }
 
+@media (min-width: 540px) {
+  .modal__content {
+    max-width: 520px;
+    padding: 1.5rem 1.75rem;
+  }
+}
+
 @media (min-width: 720px) {
   body {
     padding: 4rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero {
-    padding: 3rem;
+    padding: 2.5rem 3rem;
+    border-radius: 32px;
   }
 
-  .voyage-visual {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1.5rem;
-  }
-
-  .voyage-visual img {
-    height: 160px;
-  }
-
-  .gift-actions {
-    flex-wrap: nowrap;
+  .excursion-card__media img {
+    height: 240px;
   }
 }
 

@@ -199,12 +199,18 @@ p {
   display: flex;
   align-items: center;
   color: var(--text-muted);
+  gap: 0.35rem;
 }
 
 .details li::before {
   content: "•";
   margin-right: 0.4rem;
   color: var(--accent);
+}
+
+.details a {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .glow {
@@ -283,6 +289,17 @@ p {
   color: var(--text-muted);
   line-height: 1.5;
   font-size: 0.95rem;
+}
+
+.modal-link {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.modal-link a {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .modal__content object {
